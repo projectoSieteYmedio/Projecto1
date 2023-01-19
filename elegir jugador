@@ -1,0 +1,62 @@
+jugadores = {
+    "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4,
+                  "points": 0, "cards": [], "roundPoints": 0},
+    "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40,
+                  "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50,
+                  "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+}
+
+cadena4 = ("********************************************************************************************************************************************\n\n")
+cadena4 = cadena4 +("   _____        __     ______                           ____   __                                \n")
+cadena4 = cadena4 +("  / ___/ ___   / /_   / ____/____ _ ____ ___   ___     / __ \ / /____ _ __  __ ___   _____ _____\n ")
+cadena4 = cadena4 +("  \__ \ / _ \ / __/  / / __ / __ `// __ `__ \ / _ \   / /_/ // // __ `// / / // _ \ / ___// ___/\n")
+cadena4 = cadena4 +(" ___/ //  __// /_   / /_/ // /_/ // / / / / //  __/  / ____// // /_/ // /_/ //  __// /   (__  ) \n")
+cadena4 = cadena4 +("/____/ \___/ \__/   \____/ \__,_//_/ /_/ /_/ \___/  /_/    /_/ \__,_/ \__, / \___//_/   /____/\n")
+cadena4 = cadena4 +("                                                                     /____/                   \n\n")
+cadena4 = cadena4 +("********************************************************************************************************************************************")
+print(cadena4)
+asteriscos = ("***************************************************************Select Players***************************************************************")
+print(asteriscos)
+intro = ("                             Boot Players                             ||                             Human Players                           ")
+print(intro)
+guiones = ("--------------------------------------------------------------------------------------------------------------------------------------------")
+print(guiones)
+a = ("ID                  Name                     Type                     || ID                  Name                     Type                  ")
+print(a)
+estrellitas = ("********************************************************************************************************************************************")
+print(estrellitas)
+boots = {"12345423A":{"name":"Alf","type":40},
+         "12345678B":{"name":"orf","type":20},
+         "23145678c":{"name":"ale","type":10}}
+
+bootskeys = []
+bootsname = []
+bootstype = []
+humankeys = []
+humanname = []
+humantype = []
+vueltashuman = 0
+vueltasboot = 0
+
+for i in list(boots):
+    bootskeys.append(i)
+    bootsname.append(boots[i]["name"])
+    bootstype.append(str(boots[i]["type"]))
+    cadena2 = bootskeys[vueltasboot].ljust(20) + bootsname[vueltasboot].ljust(25) + bootstype[vueltasboot]
+    vueltasboot += 1
+
+for i in list(jugadores):
+    humankeys.append(i)
+    humanname.append(jugadores[i]["name"])
+    humantype.append(str(jugadores[i]["type"]))
+    cadena = " "*1+humankeys[vueltashuman].ljust(20) + humanname[vueltashuman].ljust(25) + humantype[vueltashuman]+"\n"
+    vueltashuman += 1
+
+
+
+
+
+    for j in range(len(jugadores)) and range(len(boots)):
+        cadena3 = cadena2 +" "*23+"||"+ cadena
+    print(cadena3)

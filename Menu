@@ -231,7 +231,7 @@ while not salir:
                                                 while nif in lista_dni_jugadores:
                                                     print('NIF {} already exists'.format(nif))
                                                     input('Enter to continue')
-                                                    nif = input("Enter new NIF: ")    
+                                                    break  
                                                 else:
                                                     jugadores[nif]='dfd'
                                                     print(menu_profile)

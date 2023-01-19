@@ -5,6 +5,7 @@ conn = pymysql.connect(host='20.16.222.208',user = 'ema', password='Admin@8100',
 cur = conn.cursor()
 
 
+
 cadena1 = ("********************************************************************************************************************************************\n\n")
 cadena1 = cadena1 + ("   _____                         ___              __   __  __      ______\n")
 cadena1 = cadena1 + ("  / ___/___ _   _____  ____     /   |  ____  ____/ /  / / / /___ _/ / __/\n")
@@ -56,7 +57,7 @@ cadena4 = cadena4 +(" ___/ //  __// /_   / /_/ // /_/ // / / / / //  __/  / ____
 cadena4 = cadena4 +("/____/ \___/ \__/   \____/ \__,_//_/ /_/ /_/ \___/  /_/    /_/ \__,_/ \__, / \___//_/   /____/\n")
 cadena4 = cadena4 +("                                                                     /____/                   \n\n")
 cadena4 = cadena4 +("********************************************************************************************************************************************")
-
+name_digito=False
 
 #5
 cadena5 = ("********************************************************************************************************************************************\n\n")
@@ -106,7 +107,7 @@ jugadores = {
     3: {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
 }
 
-cur = conn.cursor()
+
 cartas = {
     'O01': {"O01": "As de Oros", "value": 1, "priority": 4, "realValue": 1},
     'O02': {"O02": "Dos de Oros", "value": 2, "priority": 4, "realValue": 2}, # carta de Mario 2
@@ -152,18 +153,26 @@ cartas = {
     'B11': {"literal": "Caballo de Bastos", "value": 9, "priority": 1, "realValue": 0.5},
     'B12': {"literal": "Rey de Bastos", "value": 10, "priority": 1, "realValue": 0.5}
 }
-
-
+jugadores = {
+    "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+}
 
 menu00 = "1)Add/Remove/Show Players\n2)Settings\n3)Play Game\n4)Ranking\n5)Reports\n6)Exit"
 menu01 = "1)New Human Player\n2)New Boot\n3)Show/Remove Players\n4)Go back"
 menu02 = "1)Set Game Players\n2)Set Card's Deck\n3)Set Max Rounds (Default 5 Rounds)\n4)Go back"
 menu04 = "1)Players With More Earnings\n2)Players With More Games Played\n3)Players With More Minutes Played\n4)Go back"
 menu05 = "1)  Initial card more repeated by each user,only users who have played a minimum of 3 games\n2)  Player who makes the highest bet per game,find the round with the highest bet.\n3)  Player who makes the lowest bet per game.\n4)  Percentage of rounds won per player in each game(%), as well as their average bet for the game.\n5)  List of games won by Bots.\n6)  Rounds won by the bank in each game.\n7)  Number of users have been the bank in each game.\n8)  Average bet per game.\n9)  Average bet of the first round of each game.\n10) Average bet of the last round of each game..\n11)Go Back"
+menu_profile='Select your Profile:\n1)Cautious\n2)Moderated\n3)Bold'
 m00 = True
 m01 = False
 m02 = False
 m03 = False
+jugador_humano=False
+jugador_bot=False
+tipo_juego=False
+jugador_juego=False
 salir = False
 while not salir:
     while not salir:
@@ -181,6 +190,7 @@ while not salir:
                     m00 = False
                     m01 = True
                     while m01:
+                        lista_dni_jugadores=list(jugadores)
                         print(cadena8)
                         print()
                         print(menu01)
@@ -192,6 +202,45 @@ while not salir:
                         else:
                             opc2 = int(opc2)
                             if opc2 == 1:
+                                name_human=input('Name: ')
+                                for i in name_human:
+                                    if i.isdigit():
+                                        name_digito=True
+                                if len(name_human)==0:
+                                    print('Incorrect name')
+                                elif name_human[0]==' ' and len(name_human)==1:
+                                    print('Incorrect name')
+                                elif name_human[0]==' ':
+                                    print('Incorrect name, the name cannot start with space')
+                                elif name_digito==True:
+                                    print('Incorrect name')
+                                else:
+                                    tabla = "TRWAGMYFPDXBNJZSQVHLCKE"
+                                    numeros = "1234567890"
+                                    nif = input("Enter new NIF: ")
+                                    if (len(nif) == 9):
+                                        letraControl = nif[8].upper()
+                                        dni = nif[:8]
+                                        if not nif[0:8].isdigit():
+                                            print('The first 8 characters of DNI are numbers')
+                                        elif not nif[8].isalpha():
+                                            print('Dni has to end with a letter')
+                                        elif ( len(dni) == len( [n for n in dni if n in numeros] ) ):
+                                            if tabla[int(dni)%23] == letraControl:
+                                                nif=nif.upper()
+                                                while nif in lista_dni_jugadores:
+                                                    print('NIF {} already exists'.format(nif))
+                                                    input('Enter to continue')
+                                                    nif = input("Enter new NIF: ")    
+                                                else:
+                                                    jugadores[nif]='dfd'
+                                                    print(menu_profile)
+                                                    
+                                            else:
+                                                print('Incorrect DNI letter')
+                                    else:
+                                    
+                                        print('Incorrect lenght')
                                 print()
                             if opc2 == 2:
                                 print()
@@ -207,7 +256,7 @@ while not salir:
 
                         print(cadena2)
                         print(menu02)
-                        opc1 = input("Opcion:")
+                        opc1 = input("Opcion:") 
                         if not opc1.isdigit():
                             print("Solo se aceptran digitos")
                         elif not int(opc1) in range(0, 6):
@@ -216,8 +265,16 @@ while not salir:
                             opc1 = int(opc1)
                             if opc1 == 1:
                                 print()
+                                print(20*'*','Actual Players In Game','*'*20)
+                                print(18*' ','There is no players in game',' '*20)
+                                print(18*' ','Enter to continue',' '*20)
+                                input()
+                                #Aqui tienes que mostrar los jugadores para elejir
+                                input('Enter to continue')
+                                jugador_humano=True
                             if opc1 == 2:
                                 print()
+                                tipo_juego=True
                             if opc1 == 3:
                                 print()
                             if opc1 == 4:
@@ -225,16 +282,20 @@ while not salir:
                                 m00 = True
 
                 if opc == 3:
-                    m00 = False
-                    m03 = True
-                    while m03:
-                        opc3 = input("Opcion:")
-                        if not opc3.isdigit():
-                            print("Solo se aceptran digitos")
-                        elif not int(opc3) in range(0, 5):
-                            print("Opcion incorrecta")
-                        else:
-                            opc3 = int(opc3)
+                    if jugador_humano==True and tipo_juego==True:
+                        jugador_juego=True
+                    if jugador_juego==False:
+                        print('Set the players that compose the game first')
+                        input('Enter to continue')
+                    else:
+                        while m03:
+                            opc3 = input("Opcion:")
+                            if not opc3.isdigit():
+                                print("Solo se aceptran digitos")
+                            elif not int(opc3) in range(0, 5):
+                                print("Opcion incorrecta")
+                            else:
+                                opc3 = int(opc3)
 
                 if opc == 4:
                     m00 = False
@@ -298,4 +359,4 @@ while not salir:
 
                 if opc == 6:
                     m00 = False
-                    Salir = True
+                    Salir = True  

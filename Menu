@@ -1,0 +1,301 @@
+
+import pymysql
+conn = pymysql.connect(host='20.16.222.208',user = 'ema', password='Admin@8100', db='EMA')
+
+cur = conn.cursor()
+
+
+cadena1 = ("********************************************************************************************************************************************\n\n")
+cadena1 = cadena1 + ("   _____                         ___              __   __  __      ______\n")
+cadena1 = cadena1 + ("  / ___/___ _   _____  ____     /   |  ____  ____/ /  / / / /___ _/ / __/\n")
+cadena1 = cadena1 + ("  \__ \/ _ \ | / / _ \/ __ \   / /| | / __ \/ __  /  / /_/ / __ `/ / /_ \n")
+cadena1 = cadena1 + (" ___/ /  __/ |/ /  __/ / / /  / ___ |/ / / / /_/ /  / __  / /_/ / / __/\n")
+cadena1 = cadena1 + ("/____/\___/|___/\___/_/ /_/  /_/  |_/_/ /_/\__,_/  /_/ /_/\__,_/_/_/ \n")
+cadena1 = cadena1 + ("  ______     _                   _______                      _             _   _ _ _ \n")
+cadena1 = cadena1 +(" |  ____|   | |                 |__   __|                    | |           (_) (_) | |\n")
+cadena1 = cadena1 +(" | |__   ___| |_ _____   _____     | | ___ _ __ _ __ __ _  __| | __ _ ___   _   _| | | __ _\n")
+cadena1 = cadena1 +(" |  __| / __| __/ _ \ \ / / _ \    | |/ _ \ '__| '__/ _` |/ _` |/ _` / __| | | | | | |/ _` |\n")
+cadena1 = cadena1 +(" | |____\__ \ ||  __/\ V /  __/    | |  __/ |  | | | (_| | (_| | (_| \__ \ | | | | | | (_| |\n")
+cadena1 = cadena1 +(" |______|___/\__\___| \_/ \___|    |_|\___|_|  |_|  \__,_|\__,_|\__,_|___/ |_| |_|_|_|\__,_|\n\n")
+cadena1 = cadena1 + ("********************************************************************************************************************************************")
+
+
+#2
+
+cadena2 = ("********************************************************************************************************************************************\n\n")
+cadena2 = cadena2 + ("   .d8888b.           888    888    d8b\n")
+cadena2 = cadena2 + ("  d88P  Y88b          888    888    Y8P\n")
+cadena2 = cadena2 + ("  Y88b.               888    888\n")
+cadena2 = cadena2 + ("  Y888b.    .d88b.  888888 888888   888 88888b.   .d88b.  .d8888b\n")
+cadena2 = cadena2 +("   Y88b.    d8P  Y8b  888    888    888 888 ""88b  d88P""88b 88K\n")
+cadena2 = cadena2 +("     888    88888888  888    888    888 888  888 888  888 Y8888b.\n")
+cadena2 = cadena2 +(" Y88b  d88P Y8b.      Y88b.  Y88b.  888 888  888 Y88b 888      X88\n")
+cadena2 = cadena2 +("   Y8888P    Y8888      Y888  Y888  888 888  888   Y88888 88888P\n")
+cadena2 = cadena2 +("                                                      888         \n")
+cadena2 = cadena2 +("                                                 Y8b d88P        \n")
+cadena2 = cadena2 +("                                                   Y88P         \n\n")
+cadena2 = cadena2 +("********************************************************************************************************************************************")
+
+
+#3
+cadena3 = ("********************************************************************************************************************************************\n\n")
+cadena3 = cadena3 +("     _____        __     __  ___                ____                            __      \n")
+cadena3 = cadena3 +("   / ___/ ___   / /_   /  |/  /____ _ _  __   / __ \ ____   __  __ ____   ____/ /_____ \n")
+cadena3 = cadena3 +("   \__ \ / _ \ / __/  / /|_/ // __ `/| |/_/  / /_/ // __ \ / / / // __ \ / __  // ___/ \n")
+cadena3 = cadena3 +("  ___/ //  __// /_   / /  / // /_/ /_>  <   / _, _// /_(/ // /_/ // / / // /_/ /(__  ) \n")
+cadena3 = cadena3 +(" /____/ \___/ \__/  /_/  /_/ \__,_//_/|_|  /_/ |_| \____/ \__,_//_/ /_/ \__,_//____/\n\n")
+cadena3 = cadena3 +("********************************************************************************************************************************************")
+
+
+#4
+cadena4 = ("********************************************************************************************************************************************\n\n")
+cadena4 = cadena4 +("   _____        __     ______                           ____   __                                \n")
+cadena4 = cadena4 +("  / ___/ ___   / /_   / ____/____ _ ____ ___   ___     / __ \ / /____ _ __  __ ___   _____ _____\n ")
+cadena4 = cadena4 +("  \__ \ / _ \ / __/  / / __ / __ `// __ `__ \ / _ \   / /_/ // // __ `// / / // _ \ / ___// ___/\n")
+cadena4 = cadena4 +(" ___/ //  __// /_   / /_/ // /_/ // / / / / //  __/  / ____// // /_/ // /_/ //  __// /   (__  ) \n")
+cadena4 = cadena4 +("/____/ \___/ \__/   \____/ \__,_//_/ /_/ /_/ \___/  /_/    /_/ \__,_/ \__, / \___//_/   /____/\n")
+cadena4 = cadena4 +("                                                                     /____/                   \n\n")
+cadena4 = cadena4 +("********************************************************************************************************************************************")
+
+
+#5
+cadena5 = ("********************************************************************************************************************************************\n\n")
+cadena5 = cadena5+("    ____                             __        \n")
+cadena5 = cadena5+("   / __ \ ___   ____   ____   _____ / /_ _____\n")
+cadena5 = cadena5+("  / /_/ // _ \ / __ \ / __ \ / ___// __// ___/ \n")
+cadena5 = cadena5 +(" / _, _//  __// /_/ // /_/ // /   / /_ (__  )\n")
+cadena5 = cadena5+("/_/ |_| \___// .___/ \____//_/    \__//____/ \n")
+cadena5 = cadena5 +("            /_/                            \n\n")
+cadena5 = cadena5 +("********************************************************************************************************************************************")
+
+
+#6
+cadena6 = ("********************************************************************************************************************************************\n\n")
+cadena6 = cadena6 +("    ____                 __    _                    \n")
+cadena6 = cadena6 +("   / __ \ ____ _ ____   / /__ (_)____   ____ _\n")
+cadena6 = cadena6 +("  / /_/ // __ `// __ \ / //_// // __ \ / __ `/\n")
+cadena6 = cadena6 +(" / _, _// /_/ // / / // ,<  / // / / // /_/ /\n")
+cadena6 = cadena6+("/_/ |_| \__,_//_/ /_//_/|_|/_//_/ /_/ \__, /\n")
+cadena6 = cadena6 +("                                     /____/ \n\n")
+cadena6 = cadena6 +("********************************************************************************************************************************************")
+
+
+#7
+cadena7 = ("********************************************************************************************************************************************\n\n")
+cadena7 = cadena7 +("     ____               __      ____   ____   ______                  __       \n")
+cadena7 = cadena7 +("    / __ \ ___   _____ / /__   / __ \ / __/  / ____/____ _ _____ ____/ /_____ \n")
+cadena7 = cadena7 +("   / / / // _ \ / ___// //_/  / / / // /_   / /    / __ `// ___// __  // ___/ \n")
+cadena7 = cadena7 +("  / /_/ //  __// /__ / ,<    / /_/ // __/  / /___ / /_/ // /   / /_/ /(__  ) \n")
+cadena7 = cadena7 +(" /_____/ \___/ \___//_/|_|   \____//_/     \____/ \__,_//_/    \__,_//____/ \n\n")
+cadena7 = cadena7 +("********************************************************************************************************************************************")
+
+#8
+
+cadena8 = ("********************************************************************************************************************************************\n\n")
+cadena8 = cadena8 + ("     ____   ____   ____   ____     ____   __\n")
+cadena8 = cadena8 + ("    / __ ) / __ ) / __ \ / __ \   / __ \ / /____ _ __  __ ___   _____ _____\n")
+cadena8 = cadena8 + ("   / __  |/ __  |/ / / // / / /  / /_/ // // __ `// / / // _ \ / ___// ___/\n")
+cadena8 = cadena8 +("  / /_/ // /_/ // /_/ // /_/ /  / ____// // /_/ // /_/ //  __// /   (__  )\n ")
+cadena8 = cadena8 +("/_____//_____//_____//_____/  /_/    /_/ \__,_/ \__, / \___//_/   /____/\n")
+cadena8 = cadena8 +("                                                /____/                   \n\n")
+cadena8 = cadena8 +("********************************************************************************************************************************************")
+
+jugadores = {
+    1: {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    2: {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    3: {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+}
+
+cur = conn.cursor()
+cartas = {
+    'O01': {"O01": "As de Oros", "value": 1, "priority": 4, "realValue": 1},
+    'O02': {"O02": "Dos de Oros", "value": 2, "priority": 4, "realValue": 2}, # carta de Mario 2
+    'O03': {"O03": "Tres de Oros", "value": 3, "priority": 4, "realValue": 3},
+    'O04': {"O04": "Cuatro de Oros", "value": 4, "priority": 4, "realValue": 4},
+    'O05': {"O05": "Cinco de Oros", "value": 5, "priority": 4, "realValue": 5},
+    'O06': {"O06": "Seis de Oros", "value": 6, "priority": 4, "realValue": 6},
+    'O07': {"O07": "Siete de Oros", "value": 7, "priority": 4, "realValue": 7},
+    'O10': {"O10": "Sota de Oros", "value": 8, "priority": 4, "realValue": 0.5},
+    'O11': {"O11": "Caballo de Oros", "value": 9, "priority": 4, "realValue": 0.5},
+    'O12': {"O12": "Rey de Oros", "value": 10, "priority": 4, "realValue": 0.5},
+
+    'C01': {"literal": "As de Copas", "value": 1, "priority": 3, "realValue": 1},
+    'C02': {"literal": "Dos de Copas", "value": 2, "priority": 3, "realValue": 2},
+    'C03': {"literal": "Tres de Copas", "value": 3, "priority": 3, "realValue": 3}, # carta de Pedro 3
+    'C04': {"literal": "Cuatro de Copas", "value": 4, "priority": 3, "realValue": 4},
+    'C05': {"literal": "Cinco de Copas", "value": 5, "priority": 3, "realValue": 5},
+    'C06': {"literal": "Seis de Copas", "value": 6, "priority": 3, "realValue": 6},
+    'C07': {"literal": "Siete de Copas", "value": 7, "priority": 3, "realValue": 7},
+    'C10': {"literal": "Sota de Copas", "value": 8, "priority": 3, "realValue": 0.5},
+    'C11': {"literal": "Caballo de Copas", "value": 9, "priority": 3, "realValue": 0.5},
+    'C12': {"literal": "Rey de Copas", "value": 10, "priority": 3, "realValue": 0.5},
+
+    'E01': {"literal": "As de Espadas", "value": 1, "priority": 2, "realValue": 1},
+    'E02': {"literal": "Dos de Espadas", "value": 2, "priority": 2, "realValue": 2},
+    'E03': {"literal": "Tres de Espadas", "value": 3, "priority": 2, "realValue": 3},
+    'E04': {"literal": "Cuatro de Espadas", "value": 4, "priority": 2, "realValue": 4},
+    'E05': {"literal": "Cinco de Espadas", "value": 5, "priority": 2, "realValue": 5}, # Carta de Lucas 5
+    'E06': {"literal": "Seis de Espadas", "value": 6, "priority": 2, "realValue": 6},
+    'E07': {"literal": "Siete de Espadas", "value": 7, "priority": 2, "realValue": 7},
+    'E10': {"literal": "Sota de Espadas", "value": 8, "priority": 2, "realValue": 0.5},
+    'E11': {"literal": "Caballo de Espadas", "value": 9, "priority": 2, "realValue": 0.5},
+    'E12': {"literal": "Rey de Espadas", "value": 10, "priority": 2, "realValue": 0.5},
+
+    'B01': {"literal": "As de Bastos", "value": 1, "priority": 1, "realValue": 1},
+    'B02': {"literal": "Dos de Bastos", "value": 2, "priority": 1, "realValue": 2},
+    'B03': {"literal": "Tres de Bastos", "value": 3, "priority": 1, "realValue": 3},
+    'B04': {"literal": "Cuatro de Bastos", "value": 4, "priority": 1, "realValue": 4},
+    'B05': {"literal": "Cinco de Bastos", "value": 5, "priority": 1, "realValue": 5},
+    'B06': {"literal": "Seis de Bastos", "value": 6, "priority": 1, "realValue": 6},
+    'B07': {"literal": "Siete de Bastos", "value": 7, "priority": 1, "realValue": 7},
+    'B10': {"literal": "Sota de Bastos", "value": 8, "priority": 1, "realValue": 0.5},
+    'B11': {"literal": "Caballo de Bastos", "value": 9, "priority": 1, "realValue": 0.5},
+    'B12': {"literal": "Rey de Bastos", "value": 10, "priority": 1, "realValue": 0.5}
+}
+
+
+
+menu00 = "1)Add/Remove/Show Players\n2)Settings\n3)Play Game\n4)Ranking\n5)Reports\n6)Exit"
+menu01 = "1)New Human Player\n2)New Boot\n3)Show/Remove Players\n4)Go back"
+menu02 = "1)Set Game Players\n2)Set Card's Deck\n3)Set Max Rounds (Default 5 Rounds)\n4)Go back"
+menu04 = "1)Players With More Earnings\n2)Players With More Games Played\n3)Players With More Minutes Played\n4)Go back"
+menu05 = "1)  Initial card more repeated by each user,only users who have played a minimum of 3 games\n2)  Player who makes the highest bet per game,find the round with the highest bet.\n3)  Player who makes the lowest bet per game.\n4)  Percentage of rounds won per player in each game(%), as well as their average bet for the game.\n5)  List of games won by Bots.\n6)  Rounds won by the bank in each game.\n7)  Number of users have been the bank in each game.\n8)  Average bet per game.\n9)  Average bet of the first round of each game.\n10) Average bet of the last round of each game..\n11)Go Back"
+m00 = True
+m01 = False
+m02 = False
+m03 = False
+salir = False
+while not salir:
+    while not salir:
+        while m00:
+            print(cadena1)
+            print(menu00)
+            opc = input("Opcion:")
+            if not opc.isdigit():
+                print("Solo se aceptran digitos")
+            elif not int(opc) in range(0, 7):
+                print("Opcion incorrecta")
+            else:
+                opc = int(opc)
+                if opc == 1:
+                    m00 = False
+                    m01 = True
+                    while m01:
+                        print(cadena8)
+                        print()
+                        print(menu01)
+                        opc2 = input("Opcion:")
+                        if not opc2.isdigit():
+                            print("Solo se aceptran digitos")
+                        elif not int(opc2) in range(0, 6):
+                            print("Opcion incorrecta")
+                        else:
+                            opc2 = int(opc2)
+                            if opc2 == 1:
+                                print()
+                            if opc2 == 2:
+                                print()
+                            if opc2 == 3:
+                                print()
+                            if opc2 == 4:
+                                m01 = False
+                                m00 = True
+                if opc == 2:
+                    m00 = False
+                    m02 = True
+                    while m02:
+
+                        print(cadena2)
+                        print(menu02)
+                        opc1 = input("Opcion:")
+                        if not opc1.isdigit():
+                            print("Solo se aceptran digitos")
+                        elif not int(opc1) in range(0, 6):
+                            print("Opcion incorrecta")
+                        else:
+                            opc1 = int(opc1)
+                            if opc1 == 1:
+                                print()
+                            if opc1 == 2:
+                                print()
+                            if opc1 == 3:
+                                print()
+                            if opc1 == 4:
+                                m02 = False
+                                m00 = True
+
+                if opc == 3:
+                    m00 = False
+                    m03 = True
+                    while m03:
+                        opc3 = input("Opcion:")
+                        if not opc3.isdigit():
+                            print("Solo se aceptran digitos")
+                        elif not int(opc3) in range(0, 5):
+                            print("Opcion incorrecta")
+                        else:
+                            opc3 = int(opc3)
+
+                if opc == 4:
+                    m00 = False
+                    m04 = True
+                    while m04:
+                        print(cadena6)
+                        print(menu04)
+                        opc4 = input("Opcion:")
+                        if not opc4.isdigit():
+                            print("Solo se aceptran digitos")
+                        elif not int(opc4) in range(0, 5):
+                            print("Opcion incorrecta")
+                        else:
+                            opc4 = int(opc4)
+                            if opc4 == 1:
+                                print()
+                            if opc4 == 2:
+                                print()
+                            if opc4 == 3:
+                                print()
+                            if opc4 == 4:
+                                m04 = False
+                                m00 = True
+
+                if opc == 5:
+                    m00 = False
+                    m05 = True
+                    while m05:
+                        print(cadena5)
+                        print(menu05)
+                        opc5 = input("Opcion:")
+                        if not opc5.isdigit():
+                            print("Solo se aceptran digitos")
+                        elif not int(opc5) in range(0, 12):
+                            print("Opcion incorrecta")
+                        else:
+                            opc5 = int(opc5)
+                            if opc5 == 1:
+                                print()
+                            if opc5 == 2:
+                                print()
+                            if opc5 == 3:
+                                print()
+                            if opc5 == 4:
+                                print()
+                            if opc5 == 5:
+                                print()
+                            if opc5 == 6:
+                                print()
+                            if opc5 == 7:
+                                print()
+                            if opc5 == 8:
+                                print()
+                            if opc5 == 9:
+                                print()
+                            if opc5 == 10:
+                                print()
+                            if opc5 == 11:
+                                m05 = False
+                                m00 = True
+
+                if opc == 6:
+                    m00 = False
+                    Salir = True

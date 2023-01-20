@@ -243,6 +243,31 @@ while not salir:
                                         print('Incorrect lenght')
                                 print()
                             if opc2 == 2:
+                                name_bot=input('Name: ')
+                                for i in name_bot:
+                                    if i.isdigit():
+                                        name_digito=True
+                                if len(name_bot)==0:
+                                    print('Incorrect name')
+                                elif name_bot[0]==' ' and len(name_bot)==1:
+                                    print('Incorrect name')
+                                elif name_bot[0]==' ':
+                                    print('Incorrect name, the name cannot start with space')
+                                elif name_digito==True:
+                                    print('Incorrect name')
+                                print()
+                                def newRandomDNI():
+    
+
+                                    Letras = ("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E","T",
+                                    )
+                                    Numero_dni = random.randint(10000000, 99999999)
+                                    Letra_dni = Letras[Numero_dni % 23]
+                                    cadena = str(Numero_dni)
+                                    cadena += Letra_dni
+                                    return cadena
+
+                                print(newRandomDNI())
                                 print()
                             if opc2 == 3:
                                 print()

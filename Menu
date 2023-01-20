@@ -153,6 +153,10 @@ cartas = {
     'B11': {"literal": "Caballo de Bastos", "value": 9, "priority": 1, "realValue": 0.5},
     'B12': {"literal": "Rey de Bastos", "value": 10, "priority": 1, "realValue": 0.5}
 }
+
+game =  {"11115555A","22225555A","25252525A"}
+
+mazo = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40}
 jugadores = {
     "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
     "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},

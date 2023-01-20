@@ -1,0 +1,6 @@
+def resetPoints():
+    for i in jugadores.keys():
+        a = jugadores.get(i)["points"]=[20]
+    print(jugadores)
+
+print(resetPoints())

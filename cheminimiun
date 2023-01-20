@@ -1,0 +1,7 @@
+claves = []
+contador = 0
+for i in list(jugadores):
+    if jugadores[i]["points"]==0:
+        contador +=1
+    elif contador >= 2:
+        print()

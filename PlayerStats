@@ -1,0 +1,19 @@
+
+jugadores = {
+    "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},}
+
+i = input("Dime tu id: ")
+if i in jugadores.keys() and jugadores[i]["human"] == True :
+    cadena = "name"+" "*9+jugadores[i]["name"]+"\n"
+    cadena = cadena + "type"+" "*9 + str(jugadores[i]["type"])+"\n"
+    cadena = cadena +"human"+" "*8 + str(jugadores[i]["human"])+"\n"
+    cadena = cadena + "bank"+" "*9 + str(jugadores[i]["bank"])+"\n"
+    cadena = cadena + "initialCard"+" "*2 + str(jugadores[i]["initialCard"])+"\n"
+    cadena = cadena + "priority" +" "*5 + str(jugadores[i]["priority"])+"\n"
+    cadena = cadena + "bet" +" "*10 + str(jugadores[i]["bet"])+"\n"
+    cadena = cadena + "points"+" "*7 + str(jugadores[i]["points"])+"\n"
+    cadena = cadena + "cards"+" "*8 + str(jugadores[i]["cards"])+"\n"
+    cadena = cadena + "roundPoints"+" "*2 + str(jugadores[i]["roundPoints"])+"\n"
+    print(cadena)

@@ -233,8 +233,39 @@ while not salir:
                                                     input('Enter to continue')
                                                     break  
                                                 else:
-                                                    jugadores[nif]='dfd'
+                                                    
                                                     print(menu_profile)
+                                                    jugadores[str(nif)] = {}
+                                                    jugadores[nif]['name'] = name_human
+                                                    jugadores[nif]['human'] = True
+                                                    jugadores[nif]['bet'] = 4
+                                                    jugadores[nif]['points'] = 0
+                                                    jugadores[nif]['cards'] = []
+                                                    jugadores[nif]['roundPoints'] = 0
+                                                    import random
+
+                                                    a = random.randrange(1, 40)
+                                                    jugadores[nif]['initialCard'] = a
+
+                                                    opc9 = input("Opcion:")
+                                                    if not opc9.isdigit():
+                                                        print("Solo se aceptran digitos")
+                                                    elif not int(opc9) in range(0, 5):
+                                                        print("Opcion incorrecta")
+                                                    else:
+                                                        opc9 = int(opc9)
+                                                        if opc9 == 1:
+                                                            jugadores[nif]['type'] = 30
+                                                        if opc9 == 2:
+                                                            jugadores[nif]['type'] = 40
+                                                        if opc9 == 3:
+                                                            jugadores[nif]['type'] = 50
+                                                        if jugadores[nif]['type'] == 30:
+                                                            jugadores[nif]['priority'] = 1
+                                                        if jugadores[nif]['type'] == 40:
+                                                            jugadores[nif]['priority'] = 2
+                                                        if jugadores[nif]['type'] == 50:
+                                                            jugadores[nif]['priority'] = 3
                                                     
                                             else:
                                                 print('Incorrect DNI letter')

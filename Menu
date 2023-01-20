@@ -102,9 +102,9 @@ cadena8 = cadena8 +("                                                /____/     
 cadena8 = cadena8 +("********************************************************************************************************************************************")
 
 jugadores = {
-    1: {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
-    2: {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
-    3: {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
 }
 
 

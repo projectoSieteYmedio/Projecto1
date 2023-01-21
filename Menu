@@ -159,6 +159,12 @@ jugadores = {
     "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
 }
 
+game = ["11115555A","22225555A","25252525A"]
+mazo = ['O01','O02','O03''O04','O05','O06','O07','O08','O09','O010','O011','O012','C01','C02','C02','C03','C04','C05','C06','C07','C08','C09','C010','C011','C0112',
+        'E01','E02','E03','E04','E05','E06','E07','E08','E09','E010','E011','E012','B01','B02','B03','B04','B05','B06','B07','B08''B09','B010','B011','B012' ]
+maxRounds1 = [5]
+contextGame = {"game":game,"maxRounds":maxRounds1}
+
 menu00 = "1)Add/Remove/Show Players\n2)Settings\n3)Play Game\n4)Ranking\n5)Reports\n6)Exit"
 menu01 = "1)New Human Player\n2)New Boot\n3)Show/Remove Players\n4)Go back"
 menu02 = "1)Set Game Players\n2)Set Card's Deck\n3)Set Max Rounds (Default 5 Rounds)\n4)Go back"
@@ -243,7 +249,58 @@ while not salir:
                                         print('Incorrect lenght')
                                 print()
                             if opc2 == 2:
+                                 name_bot = input('Name: ')
+                                for i in name_bot:
+                                    if i.isdigit():
+                                        name_digito = True
+                                if len(name_bot) == 0:
+                                    print('Incorrect name')
+                                elif name_bot[0] == ' ' and len(name_bot) == 1:
+                                    print('Incorrect name')
+                                elif name_bot[0] == ' ':
+                                    print('Incorrect name, the name cannot start with space')
+                                elif name_digito == True:
+                                    print('Incorrect name')
                                 print()
+
+
+                                def newRandomDNI():
+                                    import random
+                                    Letras = (
+                                    "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q",
+                                    "V", "H", "L", "C", "K", "E", "T",
+                                    )
+                                    Numero_dni = random.randint(10000000, 99999999)
+                                    Letra_dni = Letras[Numero_dni % 23]
+                                    cadena = str(Numero_dni)
+                                    cadena += Letra_dni
+                                    return cadena
+
+
+                                a = newRandomDNI()
+                                print(a)
+                                import random
+
+                                game = [a]
+                                jugadores[str(a)] = {}
+                                jugadores[a]['name'] = name_bot
+                                jugadores[a]['human'] = False
+                                jugadores[a]['bet'] = 4
+                                jugadores[a]['points'] = 0
+                                jugadores[a]['cards'] = []
+                                jugadores[a]['roundPoints'] = 0
+                                c = random.randrange(1, 40)
+                                jugadores[a]['initalCard'] = c
+                                b = random.randrange(1, 3)
+                                if b == 1:
+                                    jugadores[a]['type'] = 30
+                                    jugadores[a]['priority'] = 1
+                                if b == 2:
+                                    jugadores[a]['type'] = 40
+                                    jugadores[a]['priority'] = 2
+                                if b == 3:
+                                    jugadores[a]['type'] = 50
+                                    jugadores[a]['priority'] = 3
                             if opc2 == 3:
                                 print()
                             if opc2 == 4:
@@ -273,10 +330,30 @@ while not salir:
                                 input('Enter to continue')
                                 jugador_humano=True
                             if opc1 == 2:
-                                print()
+                                print("1)ESP-ESP\n2)POKER-POKER")
+                                opc10 = input("Opcion:")
+                                if not opc10.isdigit():
+                                    print("Solo se aceptran digitos")
+                                elif not int(opc10) in range(0, 3):
+                                    print("Opcion incorrecta")
+                                else:
+                                    opc10 = int(opc10)
+                                    if opc10 == 1:
+                                        print()
+                                    if opc10 == 2:
+                                        print()
                                 tipo_juego=True
                             if opc1 == 3:
-                                print()
+                                print("Maximo de Rondas (el maximo es 30)")
+                                maxRounds = input("")
+                                if not maxRounds.isdigit():
+                                    print("Solo se aceptran digitos")
+                                elif not int(maxRounds) in range(0, 30):
+                                    print("Opcion incorrecta")
+                                else:
+                                    maxRounds = int(maxRounds)
+                                    maxRounds1.clear()
+                                    maxRounds1 = maxRounds
                             if opc1 == 4:
                                 m02 = False
                                 m00 = True

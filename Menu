@@ -458,7 +458,17 @@ while not salir:
                                 print()
                                 tipo_juego=True
                             if opc1 == 3:
-                                print()
+                                print(cadena3)
+                                print("Maximo de Rondas (el maximo es 30)")
+                                maxRounds = input("")
+                                if not maxRounds.isdigit():
+                                    print("Solo se aceptran digitos")
+                                elif not int(maxRounds) in range(0, 30):
+                                    print("Opcion incorrecta")
+                                else:
+                                    maxRounds = int(maxRounds)
+                                    maxRounds1.clear()
+                                    maxRounds1 = maxRounds
                             if opc1 == 4:
                                 m02 = False
                                 m00 = True

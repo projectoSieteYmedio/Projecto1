@@ -158,11 +158,133 @@ game =  {"11115555A","22225555A","25252525A"}
 
 mazo = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40}
 jugadores = {
-    "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
-    "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
-    "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50, "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "11115555A": {"name": "Mario", "human": False, "bank": False, "initialCard": 2, "priority": 1, "type": 30, "bet": 4,
+                  "points": 0, "cards": [], "roundPoints": 0},
+    "22225555A": {"name": "Pedro", "human": False, "bank": False, "initialCard": 13, "priority": 2, "type": 40,
+                  "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "25252525A": {"name": "Lucas", "human": False, "bank": False, "initialCard": 25, "priority": 3, "type": 50,
+                  "bet": 4, "points": 0, "cards": [], "roundPoints": 0},
+    "70919171M":{"name":"Kevin","human":True,"bank":False,"initialCard":15,"priority":1,"type":30,
+                   "bet":4,"points":0,"cards":[],"roundPoints":0},
+    "23605230P":{"name":"Leo","human":True,"bank":False,"intialCard":32,"priority":2,"type":40,"bet":4,"points":0,"cards":[],
+                 "roundPoints":0},
+    "53309533H":{"name":"Paolo","human":True,"bank":False,"initalCard":39,"priorty":3,"type":50,"bet":4,"points":0,"cards":[],
+                 "roundPoints":0}
 }
+bootskeys = []
+bootsname = []
+bootstype = []
+humankeys = []
+humanname = []
+humantype = []
+vueltashuman = 0
+vueltasboot = 0
+game = ["11115555A","22225555A"]
+maxRounds1 = [5]
+contextGame = {"game":game,"maxRounds":maxRounds1}
+for i in list(jugadores):
+    if jugadores[i]["human"] == False:
+        bootskeys.append(i)
+        bootsname.append(jugadores[i]["name"])
+        bootstype.append(str(jugadores[i]["type"]))
+        cadena = (bootskeys[vueltasboot].ljust(20) + bootsname[vueltasboot].ljust(25) + bootstype[
+            vueltasboot] + " " * 23 + "||")
+        vueltasboot += 1
 
+
+    elif jugadores[i]["human"] == True:
+        humankeys.append(i)
+        humanname.append(jugadores[i]["name"])
+        humantype.append(str(jugadores[i]["type"]))
+        cadena += (" " * 1 + humankeys[vueltashuman].ljust(20) + humanname[vueltashuman].ljust(25) + humantype[
+            vueltashuman] + "\n")
+
+
+def menu_seleccion_jugadores(bots,humanos):
+    # print(bots,humanos)
+
+    cadena4 = (
+        "********************************************************************************************************************************************\n\n")
+    cadena4 = cadena4 + (
+        "   _____        __     ______                           ____   __                                \n")
+    cadena4 = cadena4 + (
+        "  / ___/ ___   / /_   / ____/____ _ ____ ___   ___     / __ \ / /____ _ __  __ ___   _____ _____\n ")
+    cadena4 = cadena4 + (
+        "  \__ \ / _ \ / __/  / / __ / __ `// __ `__ \ / _ \   / /_/ // // __ `// / / // _ \ / ___// ___/\n")
+    cadena4 = cadena4 + (
+        " ___/ //  __// /_   / /_/ // /_/ // / / / / //  __/  / ____// // /_/ // /_/ //  __// /   (__  ) \n")
+    cadena4 = cadena4 + (
+        "/____/ \___/ \__/   \____/ \__,_//_/ /_/ /_/ \___/  /_/    /_/ \__,_/ \__, / \___//_/   /____/\n")
+    cadena4 = cadena4 + (
+        "                                                                     /____/                   \n\n")
+    cadena4 = cadena4 + (
+        "********************************************************************************************************************************************")
+    print(cadena4)
+    asteriscos = (
+        "***************************************************************Select Players***************************************************************")
+    print(asteriscos)
+    intro = (
+        "                             Boot Players                             ||                             Human Players                           ")
+    print(intro)
+    guiones = (
+        "--------------------------------------------------------------------------------------------------------------------------------------------")
+    print(guiones)
+    a = (
+        "ID                  Name                     Type                     || ID                  Name                     Type                  ")
+    print(a)
+    estrellitas = (
+        "********************************************************************************************************************************************")
+    print(estrellitas)
+    if len(bots)>len(humanos):
+        grande=len(bots)
+    else:
+        grande=len(humanos)
+    concatenar_bot = 0
+    concatenar_humano=0
+    for x in range(0,grande):
+        if concatenar_bot==len(bots):
+            print(' '*50+' ',end='')
+        for i in range(concatenar_bot,len(bots)):
+            print(bots[i].ljust(20) + jugadores[bots[i]]['name'].ljust(25), end='')
+            if jugadores[bots[i]]['type'] == 50:
+                print('Bold'.ljust(15) + ' '*10+"||"+" ", end='')
+            elif jugadores[bots[i]]['type'] == 40:
+                print('Moderated'.ljust(15) + ' '*10+"||"+" ", end='')
+            elif jugadores[bots[i]]['type'] == 30:
+                print('Cautius'.ljust(15) + ' '*10+"||"+" ", end='')
+            concatenar_bot+=1
+            break
+        if concatenar_humano==len(humanos):
+            print('')
+        for j in range(concatenar_humano, len(humanos)):
+
+            print(humanos[j].ljust(20) + jugadores[humanos[j]]['name'].ljust(25), end='')
+            if jugadores[humanos[j]]['type'] == 50:
+                print('Bold'.ljust(10))
+            elif jugadores[humanos[j]]['type'] == 40:
+                print('Moderated'.ljust(10))
+            elif jugadores[humanos[j]]['type'] == 30:
+                print('Cautious'.ljust(10))
+            concatenar_humano += 1
+            break
+
+
+    print("********************************************************************************************************************************************")
+    print("                           id to add player ,exit to exit")
+    a = input()
+    if a == "id" or a == "ID":
+        id = input("ID:")
+        if id in jugadores.keys():
+            game.append(id)
+            contextGame["game"]=game
+            print(contextGame)
+        if not id in jugadores.keys():
+            print("Incorrect ID")
+
+    elif a == "exit" or a == "EXIT":
+        print()
+    return input("Enter to continue")
+    
 menu00 = "1)Add/Remove/Show Players\n2)Settings\n3)Play Game\n4)Ranking\n5)Reports\n6)Exit"
 menu01 = "1)New Human Player\n2)New Boot\n3)Show/Remove Players\n4)Go back"
 menu02 = "1)Set Game Players\n2)Set Card's Deck\n3)Set Max Rounds (Default 5 Rounds)\n4)Go back"
@@ -329,7 +451,7 @@ while not salir:
                                 print(18*' ','There is no players in game',' '*20)
                                 print(18*' ','Enter to continue',' '*20)
                                 input()
-                                #Aqui tienes que mostrar los jugadores para elejir
+                                print(menu_seleccion_jugadores(bootskeys,humankeys))
                                 input('Enter to continue')
                                 jugador_humano=True
                             if opc1 == 2:

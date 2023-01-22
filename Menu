@@ -526,17 +526,20 @@ while not salir:
                         else:
                             opc5 = int(opc5)
                             if opc5 == 1:
-                                print()
+                                print("---------------------------------------------------------In Contruction---------------------------------------------------------------------")
+                                input("                                                        Enter to continue")
                             if opc5 == 2:
                                 print()
                             if opc5 == 3:
                                 print()
                             if opc5 == 4:
-                                print()
+                                print("---------------------------------------------------------In Contruction---------------------------------------------------------------------")
+                                input("                                                        Enter to continue")
                             if opc5 == 5:
                                 print()
                             if opc5 == 6:
-                                print()
+                                print("---------------------------------------------------------In Contruction---------------------------------------------------------------------")
+                                input("                                                        Enter to continue")
                             if opc5 == 7:
                                 print()
                             if opc5 == 8:

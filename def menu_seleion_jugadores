@@ -1,0 +1,44 @@
+def menu_seleccion_jugadores(bots,humanos):
+    # print(bots,humanos)
+    print('\nElige los jugadores:')
+    print('Jugadores Bot'.center(45) + ''.center(12) + 'Jugadores Humano'.center(58))
+    print(''*110)
+    print('ID'.ljust(10) + 'Nombre'.rjust(15) + 'tipo'.rjust(20) + ' '.rjust(8), end='')
+    print('ID'.ljust(10) + 'Nombre'.rjust(15) + 'tipo'.rjust(20))
+    print('-' * 110)
+    if len(bots)>len(humanos):
+        grande=len(bots)
+    else:
+        grande=len(humanos)
+    concatenar_bot = 0
+    concatenar_humano=0
+    for x in range(0,grande):
+        if concatenar_bot==len(bots):
+            print(' '*50+' ',end='')
+        for i in range(concatenar_bot,len(bots)):
+            print(bots[i].ljust(19) + jugadores[bots[i]]['name'].ljust(22), end='')
+            if jugadores[bots[i]]['type'] == 50:
+                print('atrevido'.ljust(9) + ' ', end='')
+            elif jugadores[bots[i]]['type'] == 40:
+                print('normal'.ljust(9) + ' ', end='')
+            elif jugadores[bots[i]]['type'] == 30:
+                print('prudente'.ljust(9) + ' ', end='')
+            concatenar_bot+=1
+            break
+        if concatenar_humano==len(humanos):
+            print('a')
+        for j in range(concatenar_humano, len(humanos)):
+
+            print(humanos[j].ljust(19) + jugadores[humanos[j]]['name'].ljust(22), end='')
+            if jugadores[humanos[j]]['type'] == 50:
+                print('atrevido'.ljust(10))
+            elif jugadores[humanos[j]]['type'] == 40:
+                print('normal'.ljust(10))
+            elif jugadores[humanos[j]]['type'] == 30:
+                print('prudente'.ljust(10))
+            concatenar_humano += 1
+            break
+
+
+    print('' * 110 + '\n')
+print(menu_seleccion_jugadores(bootskeys,humankeys))
